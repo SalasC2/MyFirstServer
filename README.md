@@ -1,3 +1,3 @@
 # MyFirstServer
 Attempt on my first server. 
-View it at [@csalas.tech](www.csalas.tech Christian's Webpage)
+View it at [@here](csalas.tech Christian's Webpage)
