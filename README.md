@@ -1,3 +1,3 @@
-# MyFirstServer
-Attempt on my first server. 
+# PersonalWebsite
+My personal website
 See it on csalas.tech
