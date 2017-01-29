@@ -65,6 +65,11 @@ a img{
   width: 330px;
 }
 
+.penelope {
+  position: absolute;
+  height: 80px;
+}
+
 .android-logo-image {
   height: 28px;
   width: 140px;
