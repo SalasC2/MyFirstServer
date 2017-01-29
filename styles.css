@@ -61,8 +61,13 @@ a img{
 }
 
 .profile-logo-image {
-  height: 300px;
-  width: 300px;
+  height: 350px;
+  width: 330px;
+}
+
+.penelope {
+  position: absolute;
+  height: 80px;
 }
 
 .android-logo-image {
