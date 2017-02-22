@@ -181,7 +181,7 @@ a img{
 
 .android-be-together-section {
   position: relative;
-  height: 900px;
+  height: 1070px;
   width: auto;
   background-color: #f3f3f3;
   /*background: url('images/profile.jpg') center 30% no-repeat;*/
@@ -201,7 +201,7 @@ a img{
 }
 
 .android-sub-slogan {
-  font-size: 21px;
+  font-size: 40px;
   padding-top: 24px;
 }
 
