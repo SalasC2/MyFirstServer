@@ -9,40 +9,37 @@ $(function() {
     var form = $('#ajax-contact');
 
     // Get the messages div.
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var formMessages = $('#message').val();
 
     $(form).submit(function(event) {
         // Stop the browser from submitting the form.
         event.preventDefault();
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var message = $('#message').val();
 
-        // Serialize the form data.
+        var url = '//docs.google.com/forms/d/e/1FAIpQLSdbbworCapSs2CKIelxdPWAz-3N3BtolIE4ya4cmZiUAymEgw/formResponse'
+        var data = {
+          "entry.2005620554": name,
+          "entry.1045781291": email,
+          "entry.839337160": message
+        };
         $.ajax({
           type: 'POST',
-          url: 'email-form.php',
-          data: $("#ajax-contact").serialize()
+          url: url,
+          data: data,
+          'Content-Type':'application/x-www-form-urlencoded'
         }).done(function(response) {
-          // Make sure that the formMessages div has the 'success' class.
-            // $(formMessages).removeClass('error');
-            // $(formMessages).addClass('success');
-            // Set the message text.
-            // $(formMessages).text(response);
             // Clear the form.
             $("#success").html("Message Sent");
-            $("#success").hide('slow');
+            $("#success").hide(10000);
             $('#name').val('');
             $('#email').val('');
             $('#message').val('');
        }).fail(function(data) {
-         // Make sure that the formMessages div has the 'error' class.
-        //  $(formMessages).removeClass('success');
-        //  $(formMessages).addClass('error');
         $("#success").html("Message failure");
         $("#success").hide(10000);
-         // Set the message text.
          if (data.responseText !== '') {
-           $(formMessages).text(data.responseText);
+           $(message).text(data.responseText);
          } else {
            $("#success").html('Oops! An error occured and your message could not be sent.');
            $("#success").hide(10000);
