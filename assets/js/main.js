@@ -3,12 +3,10 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
 $(function() {
     // Get the form.
     var form = $('#ajax-contact');
 
-    // Get the messages div.
 
     $(form).submit(function(event) {
         // Stop the browser from submitting the form.
@@ -17,17 +15,18 @@ $(function() {
         var email = $("#email").val();
         var message = $('#message').val();
 
-        var url = '//docs.google.com/forms/d/e/1FAIpQLSdbbworCapSs2CKIelxdPWAz-3N3BtolIE4ya4cmZiUAymEgw/formResponse'
+        var url = 'https://docs.google.com/forms/d/e/1FAIpQLSdbbworCapSs2CKIelxdPWAz-3N3BtolIE4ya4cmZiUAymEgw/formResponse'
         var data = {
           "entry.2005620554": name,
           "entry.1045781291": email,
           "entry.839337160": message
         };
         $.ajax({
-          type: 'POST',
+          type: "POST",
           url: url,
+          dataType: "json",
           data: data,
-          'Content-Type':'application/x-www-form-urlencoded'
+          'Content-Type':'application/x-www-form-urlencoded',
         }).done(function(response) {
             // Clear the form.
             $("#success").html("Message Sent");
