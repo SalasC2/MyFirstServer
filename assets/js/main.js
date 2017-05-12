@@ -9,20 +9,19 @@ $(function() {
     var form = $('#ajax-contact');
 
     // Get the messages div.
-    var name = $("#name")
-    var email = $("#email")
-    var formMessages = $('#form-messages');
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var formMessages = $('#message').val();
 
     $(form).submit(function(event) {
         // Stop the browser from submitting the form.
         event.preventDefault();
 
         // Serialize the form data.
-        var formData = $(form).serialize();
         $.ajax({
           type: 'POST',
-          url: '/email-form.php',
-          data: formData
+          url: 'email-form.php',
+          data: "name=" + name + "&email=" + email + "&message=" + formMessages
         }).done(function(response) {
           // Make sure that the formMessages div has the 'success' class.
             $(formMessages).removeClass('error');
