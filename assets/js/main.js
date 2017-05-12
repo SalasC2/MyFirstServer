@@ -21,27 +21,31 @@ $(function() {
         $.ajax({
           type: 'POST',
           url: 'email-form.php',
-          data: "name=" + name + "&email=" + email + "&message=" + formMessages
+          data: $("#ajax-contact").serialize()
         }).done(function(response) {
           // Make sure that the formMessages div has the 'success' class.
-            $(formMessages).removeClass('error');
-            $(formMessages).addClass('success');
+            // $(formMessages).removeClass('error');
+            // $(formMessages).addClass('success');
             // Set the message text.
-            $(formMessages).text(response);
+            // $(formMessages).text(response);
             // Clear the form.
+            $("#success").html("Message Sent");
+            $("#success").hide('slow');
             $('#name').val('');
             $('#email').val('');
             $('#message').val('');
        }).fail(function(data) {
          // Make sure that the formMessages div has the 'error' class.
-         $(formMessages).removeClass('success');
-         $(formMessages).addClass('error');
-
+        //  $(formMessages).removeClass('success');
+        //  $(formMessages).addClass('error');
+        $("#success").html("Message failure");
+        $("#success").hide(10000);
          // Set the message text.
          if (data.responseText !== '') {
            $(formMessages).text(data.responseText);
          } else {
-           $(formMessages).text('Oops! An error occured and your message could not be sent.');
+           $("#success").html('Oops! An error occured and your message could not be sent.');
+           $("#success").hide(10000);
          }
        });
     });
