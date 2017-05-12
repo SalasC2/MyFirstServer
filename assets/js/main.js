@@ -24,7 +24,7 @@ $(function() {
         $.ajax({
           type: "POST",
           url: url,
-          dataType: "jsonp",
+          dataType: "json",
           data: data,
           'Content-Type':'application/x-www-form-urlencoded',
         }).done(function(response) {
