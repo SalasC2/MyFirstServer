@@ -1624,14 +1624,10 @@
 	}
 
 	body {
-		background-repeat: no-repeat;
 		background-color: #2e3141;
-		background-size: auto;
-		background-attachment: fixed;
+		background-size: auto, cover;
+		background-attachment: fixed, fixed;
 		background-position: center, center;
-		-webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
 	}
 
 	body {
@@ -1641,7 +1637,6 @@
 	body.scrolled {
 		background-image: linear-gradient(rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg2.jpg");
 	}
-
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 			-moz-animation: none !important;
@@ -2180,17 +2175,10 @@
 		display: inline-block;
 		position: relative;
 	}
+
 		.image img {
 			border-radius: 5px;
 			display: block;
-		}
-
-		#pic1 {
-			width: 500px !important;
-		}
-
-		#pic2 {
-			width: 500px !important;
 		}
 
 		.image.left, .image.right {
@@ -3141,10 +3129,10 @@
 
 			#banner .logo .icon {
 				border-radius: 100%;
-				border: solid 2px #454858;
+				border: solid 2px rgba(255, 255, 255, 0.125);
 				cursor: default;
 				display: inline-block;
-				font-size: 2.5em;
+				font-size: 2em;
 				height: 3em;
 				line-height: 2.25em;
 				text-align: center;
@@ -3363,10 +3351,6 @@
 		position: relative;
 	}
 
-	#one, #two, #three {
-		height: 371px;
-	}
-
 		.wrapper:before, .wrapper:after {
 			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%232e3141%3B' /%3E%3C/svg%3E");
 		}
@@ -3421,10 +3405,6 @@
 			padding: 3em 0 1em 0 ;
 			margin: 0 auto;
 			width: 55em;
-		}
-		
-		#aboutMe {
-			height: 317px;
 		}
 
 		.wrapper.style2 {
@@ -3546,7 +3526,7 @@
 				-ms-flex: 1;
 			}
 
-				.wrapper.spotlight .image #pic1 #pic2 img {
+				.wrapper.spotlight .image img {
 					border-radius: 100%;
 					width: 100%;
 				}
@@ -3668,11 +3648,9 @@
 				}
 
 				.wrapper .inner {
-					padding: 3em 3em 1em 3em;
+					padding: 3em 3em 1em 3em ;
 					width: 100%;
-					height: 317px !important;
 				}
-
 
 				.wrapper.spotlight .image {
 					margin: 0 2em 2em 0;
@@ -3814,7 +3792,7 @@
 
 		#footer {
 			background-color: #2e3141;
-			background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
+			background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg2.jpg");
 			background-size: auto, cover;
 			background-position: center, center;
 			margin-top: -6.5em;

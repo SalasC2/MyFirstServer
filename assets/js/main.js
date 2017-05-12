@@ -51,12 +51,13 @@ $(function() {
 
 
 $(window).scroll(function(){
-    var fromTopPx = 650; // distance to trigger
+    var fromTopPx = 660; // distance to trigger
     var scrolledFromtop = $(window).scrollTop();
     if(scrolledFromtop > fromTopPx){
         $('body').addClass('scrolled');
     }else{
         $('body').removeClass('scrolled');
+
     }
 });
 
