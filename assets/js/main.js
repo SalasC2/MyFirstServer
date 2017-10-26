@@ -15,7 +15,7 @@ $(function() {
         var email = $("#email").val();
         var message = $('#message').val();
 
-        var url = '//docs.google.com/forms/d/e/1FAIpQLSdbbworCapSs2CKIelxdPWAz-3N3BtolIE4ya4cmZiUAymEgw/formResponse'
+        var url = 'http://docs.google.com/forms/d/e/1FAIpQLSdbbworCapSs2CKIelxdPWAz-3N3BtolIE4ya4cmZiUAymEgw/formResponse'
         var data = {
           "entry.2005620554": name,
           "entry.1045781291": email,
@@ -26,7 +26,9 @@ $(function() {
           url: url,
           dataType: "json",
           data: data,
-          'Content-Type':'application/x-www-form-urlencoded',
+          headers: {
+            'Content-Type':'application/x-www-form-urlencoded'
+          }
         }).done(function(response) {
             // Clear the form.
             $("#success").html("Message Sent");
